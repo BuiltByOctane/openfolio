@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Openfolio
 
-## Getting Started
+> Instant portfolio for every developer. Paste a GitHub URL, pick a template, share the link.
 
-First, run the development server:
+Openfolio turns a public GitHub profile into a hosted portfolio site in seconds. Built for backend, DevOps, QA, data, and every developer who'd rather ship code than design a website.
+
+- **No login.** Uses the public GitHub API.
+- **No editing.** Regenerate to update.
+- **No trackers.** No cookies, no analytics.
+- **Open source.** Ship a template or a feature.
+
+## Quickstart
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open <http://localhost:3000>.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Other package managers work too — `npm install && npm run dev`, `yarn`, `bun`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Environment
 
-## Learn More
+Copy `.env.local.example` to `.env.local` and fill in:
 
-To learn more about Next.js, take a look at the following resources:
+| Var | Purpose |
+| --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | Canonical site origin used in metadata, OG tags, sitemap, robots, JSON-LD. |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tech
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [Next.js 16](https://nextjs.org) (App Router, React 19, React Compiler)
+- [Tailwind CSS 4](https://tailwindcss.com)
+- [Zod](https://zod.dev) for portfolio schema validation
+- [lucide-react](https://lucide.dev) for icons
+- TypeScript
 
-## Deploy on Vercel
+## Project layout
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+app/                Next.js App Router (routes, layout, metadata, sitemap)
+  api/publish/      Persists a draft as a published portfolio
+  build/github/     GitHub URL input page
+  build/preview/    Template picker + publish flow
+  [slug]/           Public portfolio route (renders selected template)
+components/
+  templates/        Portfolio templates (one file per template)
+  TemplatePicker.tsx, TemplateRenderer.tsx
+lib/                Drafts store, GitHub fetch/parse helpers, fixtures
+types/portfolio.ts  PortfolioData zod schema + TemplateId union
+data/profiles/      Published portfolio JSON (file-based store)
+public/             Static assets (favicon, manifest)
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contributing
+
+Openfolio is open source and we want your help. Read [CONTRIBUTING.md](./CONTRIBUTING.md) before opening a PR.
+
+Quick ideas:
+
+- **New template themes** — design a portfolio template, drop it in `components/templates/`, register it.
+- **New features** — better GitHub parsing, custom domains, OG image generator, analytics opt-in.
+- **Bug fixes & polish** — parsing edge cases, a11y, layout, performance.
+- **Docs & examples** — README, template authoring guide, screenshots, recorded demos.
+
+By contributing you agree to abide by the [Code of Conduct](./CODE_OF_CONDUCT.md).
+
+## License
+
+[MIT](./LICENSE) © Delbin George and contributors.
+
+Made by [octane.team](https://octane.team).

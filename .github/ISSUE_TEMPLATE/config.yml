@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security report
+    url: mailto:security@octane.team
+    about: Report a security vulnerability privately. Do not open a public issue.
+  - name: Question or discussion
+    url: https://github.com/delbingeorge/openfolio/discussions
+    about: Open-ended questions, ideas, or help requests.
