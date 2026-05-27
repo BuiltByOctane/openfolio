@@ -1,0 +1,19 @@
+{
+  "name": "Openfolio — Instant portfolio for every developer",
+  "short_name": "Openfolio",
+  "description": "Turn your GitHub into a portfolio site in seconds. Built for backend, DevOps, QA, data, and every developer who can't build a portfolio website.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0a0a0a",
+  "categories": ["developer", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/openfolio.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
