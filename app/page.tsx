@@ -42,9 +42,6 @@ export default function Home() {
           </Link>
         </div>
 
-        <p className="mt-10 text-xs text-neutral-500">
-          GitHub handles are first-come-first-served.
-        </p>
       </main>
 
       <footer className="mt-16 flex items-center justify-between font-mono text-xs tracking-widest text-neutral-400 uppercase">

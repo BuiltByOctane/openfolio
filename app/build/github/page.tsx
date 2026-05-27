@@ -84,7 +84,7 @@ export default function BuildFromGithubPage() {
           )}
         </button>
         <p className="mt-2 text-xs text-neutral-500">
-          We use the public GitHub API. No login needed. First-come-first-served on the handle.
+          We use the public GitHub API. No login needed.
         </p>
       </form>
     </div>
