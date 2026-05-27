@@ -38,20 +38,43 @@ Copy `.env.local.example` to `.env.local` and fill in:
 
 ## Project layout
 
+Feature-sliced under `src/`. Two top-level buckets: `feature/` (self-contained vertical slices) and `shared/` (cross-feature reusables). Route files in `src/app/` are thin re-exports — logic lives in the feature.
+
 ```
-app/                Next.js App Router (routes, layout, metadata, sitemap)
-  api/publish/      Persists a draft as a published portfolio
-  build/github/     GitHub URL input page
-  build/preview/    Template picker + publish flow
-  [slug]/           Public portfolio route (renders selected template)
-components/
-  templates/        Portfolio templates (one file per template)
-  TemplatePicker.tsx, TemplateRenderer.tsx
-lib/                Drafts store, GitHub fetch/parse helpers, fixtures
-types/portfolio.ts  PortfolioData zod schema + TemplateId union
-data/profiles/      Published portfolio JSON (file-based store)
-public/             Static assets (favicon, manifest)
+src/
+  app/                              Next.js App Router (thin shims, segment config)
+    layout.tsx                      root layout, metadata, JSON-LD
+    page.tsx                        → feature/home
+    [slug]/                         → feature/portfolio (page + opengraph-image)
+    build/github/, build/preview/   → feature/build
+    api/fetch-github/, api/publish/ → feature/build, feature/publish
+    dev/templates/                  → feature/dev
+    robots.ts, sitemap.ts, globals.css, not-found.tsx
+
+  feature/
+    home/pages/                     landing page
+    build/
+      pages/                        github-page, preview-page
+      components/                   preview-client, published-dialog, template-picker
+      api/                          github-client, fetch-github-handler
+    publish/api/                    publish-handler
+    portfolio/
+      pages/                        portfolio-page, portfolio-og-image
+      components/                   template-renderer
+    dev/
+      pages/                        templates-page (gallery)
+      utils/                        sample-portfolio fixtures
+
+  shared/
+    lib/                            drafts.ts, profiles.ts (file-based stores)
+    types/portfolio.ts              PortfolioData zod schema + TemplateId union
+    ui/templates/                   11 portfolio templates + index.ts
+
+data/profiles/                      Published portfolio JSON (runtime store)
+public/                             Static assets (favicon, manifest)
 ```
+
+**Layout rules:** code used by ONE feature stays inside that feature. Two consumers → promote to `shared/`. Files + folders are kebab-case; default exports are PascalCase. Path alias `@/*` → `./src/*`.
 
 ## Contributing
 
@@ -59,7 +82,7 @@ Openfolio is open source and we want your help. Read [CONTRIBUTING.md](./CONTRIB
 
 Quick ideas:
 
-- **New template themes** — design a portfolio template, drop it in `components/templates/`, register it.
+- **New template themes** — design a portfolio template, drop it in `src/shared/ui/templates/`, register it.
 - **New features** — better GitHub parsing, custom domains, OG image generator, analytics opt-in.
 - **Bug fixes & polish** — parsing edge cases, a11y, layout, performance.
 - **Docs & examples** — README, template authoring guide, screenshots, recorded demos.

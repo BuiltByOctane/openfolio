@@ -25,5 +25,5 @@
 - [ ] `pnpm lint` passes
 - [ ] `pnpm build` passes
 - [ ] Tested against fixtures with missing fields (empty bio, no projects, no avatar)
-- [ ] If adding a template: registered in `types/portfolio.ts` and `components/templates/index.ts`
+- [ ] If adding a template: registered in `src/shared/types/portfolio.ts` and `src/shared/ui/templates/index.ts`
 - [ ] No new runtime dependencies (or discussed in an issue first)
