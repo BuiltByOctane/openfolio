@@ -45,7 +45,17 @@ export default function Home() {
       </main>
 
       <footer className="mt-16 flex items-center justify-between font-mono text-xs tracking-widest text-neutral-400 uppercase">
-        <span>© {new Date().getFullYear()} openfolio</span>
+        <span>
+          © {new Date().getFullYear()} openfolio · by{" "}
+          <a
+            href="https://octane.team"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-neutral-500 hover:text-neutral-900"
+          >
+            octane.team
+          </a>
+        </span>
         <span className="hidden sm:inline">no cookies / no trackers</span>
       </footer>
     </div>
