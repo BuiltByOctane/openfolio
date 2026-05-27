@@ -10,7 +10,6 @@ export const TEMPLATE_IDS = [
   "block",
   "glass",
   "ink",
-  "sidebar",
   "dusk",
   "card",
 ] as const;

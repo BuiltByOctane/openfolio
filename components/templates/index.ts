@@ -10,7 +10,6 @@ import HearthTemplate from "./HearthTemplate";
 import BlockTemplate from "./BlockTemplate";
 import GlassTemplate from "./GlassTemplate";
 import InkTemplate from "./InkTemplate";
-import SidebarTemplate from "./SidebarTemplate";
 import DuskTemplate from "./DuskTemplate";
 import CardTemplate from "./CardTemplate";
 
@@ -24,7 +23,6 @@ export const TEMPLATES: Record<TemplateId, ComponentType<{ data: PortfolioData }
   block: BlockTemplate,
   glass: GlassTemplate,
   ink: InkTemplate,
-  sidebar: SidebarTemplate,
   dusk: DuskTemplate,
   card: CardTemplate,
 };
@@ -39,7 +37,6 @@ export const TEMPLATE_LABELS: Record<TemplateId, string> = {
   block: "Block",
   glass: "Glass",
   ink: "Ink",
-  sidebar: "Sidebar",
   dusk: "Dusk",
   card: "Card",
 };
@@ -54,7 +51,6 @@ export const TEMPLATE_DESCRIPTIONS: Record<TemplateId, string> = {
   block: "Brutalist, black-and-vermillion.",
   glass: "Frosted glass cards on deep violet gradient.",
   ink: "High-contrast print. Bold newspaper typography.",
-  sidebar: "Two-column CV with fixed sidebar.",
   dusk: "Dark purple ethereal. Subtle vertical grid.",
   card: "Bento grid cards. Colorful, modern dashboard.",
 };
