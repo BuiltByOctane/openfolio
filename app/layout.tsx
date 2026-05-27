@@ -97,7 +97,8 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     images: ["/openfolio.svg"],
-    creator: "@delbingeorge",
+    creator: "@builtbyoctane",
+    site: "@builtbyoctane",
   },
   robots: {
     index: true,
@@ -135,7 +136,7 @@ const jsonLd = {
       name: SITE_NAME,
       url: SITE_URL,
       logo: `${SITE_URL}/openfolio.svg`,
-      sameAs: ["https://github.com/delbingeorge/openfolio"],
+      sameAs: ["https://github.com/builtbyoctane/openfolio"],
     },
     {
       "@type": "SoftwareApplication",

@@ -46,7 +46,7 @@ const CONTRIBUTE_AREAS: Array<{
   },
 ];
 
-const REPO_URL = "https://github.com/delbingeorge/openfolio";
+const REPO_URL = "https://github.com/builtbyoctane/openfolio";
 
 export default function Home() {
   return (
@@ -68,7 +68,7 @@ export default function Home() {
           </span>
         </h1>
         <p className="mt-6 max-w-prose text-base leading-relaxed text-neutral-600">
-          Paste a GitHub URL. Pick one of seven templates. Get a hosted page at
+          Paste a GitHub URL. Pick one of eleven templates. Get a hosted page at
           openfolio/yourname. The whole point is that there&apos;s nothing to
           fiddle with — your words and your work, rendered.
         </p>

@@ -22,7 +22,7 @@ Thanks for the interest. Openfolio is a small, fast-moving project — keep PRs 
 ## Dev setup
 
 ```bash
-git clone https://github.com/delbingeorge/openfolio.git
+git clone https://github.com/builtbyoctane/openfolio.git
 cd openfolio
 pnpm install
 cp .env.local.example .env.local
@@ -103,7 +103,7 @@ Open an issue *before* writing code. A short proposal — problem, sketch of a s
 
 ## Security
 
-Don't open a public issue for a security report. Email <security@octane.team> instead.
+Don't open a public issue for a security report. Email <oss@octane.team> instead.
 
 ## License
 

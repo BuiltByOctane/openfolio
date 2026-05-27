@@ -4,7 +4,7 @@
 
 Don't open a public GitHub issue.
 
-Email <security@octane.team> with:
+Email <oss@octane.team> with:
 
 - A description of the vulnerability
 - Steps to reproduce (or a proof of concept)
