@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 import { loadProfile } from "@/lib/profiles";
-import { isValidSlug, TemplateIdSchema } from "@/types/portfolio";
+import { isValidSlug } from "@/types/portfolio";
 
 export const runtime = "nodejs";
 export const alt = "openfolio";
@@ -10,14 +10,14 @@ export const contentType = "image/png";
 export default async function OpengraphImage({
   params,
 }: {
-  params: { templateId: string; slug: string };
+  params: { slug: string };
 }) {
-  const { templateId, slug } = params;
+  const { slug } = params;
   let name = "openfolio";
   let headline = "Build a portfolio from your GitHub or résumé.";
 
-  if (isValidSlug(slug) && TemplateIdSchema.safeParse(templateId).success) {
-    const profile = loadProfile(templateId, slug);
+  if (isValidSlug(slug)) {
+    const profile = loadProfile(slug);
     if (profile) {
       name = profile.data.name;
       headline = profile.data.headline;
@@ -49,7 +49,7 @@ export default async function OpengraphImage({
             textTransform: "uppercase",
           }}
         >
-          openfolio · /{templateId}/{slug}
+          openfolio · /{slug}
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
           <div

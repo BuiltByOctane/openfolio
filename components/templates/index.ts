@@ -8,6 +8,11 @@ import NotebookTemplate from "./NotebookTemplate";
 import TerminalTemplate from "./TerminalTemplate";
 import HearthTemplate from "./HearthTemplate";
 import BlockTemplate from "./BlockTemplate";
+import GlassTemplate from "./GlassTemplate";
+import InkTemplate from "./InkTemplate";
+import SidebarTemplate from "./SidebarTemplate";
+import DuskTemplate from "./DuskTemplate";
+import CardTemplate from "./CardTemplate";
 
 export const TEMPLATES: Record<TemplateId, ComponentType<{ data: PortfolioData }>> = {
   beam: BeamTemplate,
@@ -17,6 +22,11 @@ export const TEMPLATES: Record<TemplateId, ComponentType<{ data: PortfolioData }
   terminal: TerminalTemplate,
   hearth: HearthTemplate,
   block: BlockTemplate,
+  glass: GlassTemplate,
+  ink: InkTemplate,
+  sidebar: SidebarTemplate,
+  dusk: DuskTemplate,
+  card: CardTemplate,
 };
 
 export const TEMPLATE_LABELS: Record<TemplateId, string> = {
@@ -27,6 +37,11 @@ export const TEMPLATE_LABELS: Record<TemplateId, string> = {
   terminal: "Terminal",
   hearth: "Hearth",
   block: "Block",
+  glass: "Glass",
+  ink: "Ink",
+  sidebar: "Sidebar",
+  dusk: "Dusk",
+  card: "Card",
 };
 
 export const TEMPLATE_DESCRIPTIONS: Record<TemplateId, string> = {
@@ -37,4 +52,9 @@ export const TEMPLATE_DESCRIPTIONS: Record<TemplateId, string> = {
   terminal: "Monospace dev terminal.",
   hearth: "Warm, indie-blog cream.",
   block: "Brutalist, black-and-vermillion.",
+  glass: "Frosted glass cards on deep violet gradient.",
+  ink: "High-contrast print. Bold newspaper typography.",
+  sidebar: "Two-column CV with fixed sidebar.",
+  dusk: "Dark purple ethereal. Subtle vertical grid.",
+  card: "Bento grid cards. Colorful, modern dashboard.",
 };

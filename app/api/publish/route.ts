@@ -47,5 +47,5 @@ export async function POST(req: Request) {
   }
 
   deleteDraft(draftId);
-  return NextResponse.json({ slug: `${templateId}/${slug}` });
+  return NextResponse.json({ slug });
 }

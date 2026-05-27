@@ -8,6 +8,11 @@ export const TEMPLATE_IDS = [
   "terminal",
   "hearth",
   "block",
+  "glass",
+  "ink",
+  "sidebar",
+  "dusk",
+  "card",
 ] as const;
 
 export type TemplateId = (typeof TEMPLATE_IDS)[number];

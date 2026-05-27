@@ -6,7 +6,7 @@ export default function NotFound() {
       <p className="text-xs tracking-widest text-neutral-500 uppercase">404</p>
       <h1 className="mt-3 text-3xl font-medium tracking-tight">Nobody&apos;s here.</h1>
       <p className="mt-3 text-sm text-neutral-600">
-        This profile isn&apos;t published yet. Want to create one?
+        This slug isn&apos;t taken yet. Want to claim it?
       </p>
       <Link
         href="/"
